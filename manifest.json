@@ -1,0 +1,16 @@
+{
+  "name": "Dinner Planner",
+  "short_name": "Dinner",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#061c2e",
+  "theme_color": "#061c2e",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
