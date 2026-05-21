@@ -3,7 +3,8 @@
   "short_name": "Dinner",
   "display": "standalone",
   "orientation": "portrait",
-  "start_url": "/",
+  "start_url": "/dinner-app/",
+  "scope": "/dinner-app/",
   "background_color": "#061c2e",
   "theme_color": "#061c2e",
   "icons": [
