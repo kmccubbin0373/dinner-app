@@ -123,6 +123,12 @@ body{overscroll-behavior:none;-webkit-overflow-scrolling:touch}
 </style>
 </head>
 <body>
+
+<div id="splash">
+  <img src="icon.png" alt="Dinner Planner">
+  <span>Dinner Planner</span>
+</div>
+
 <div class="app" id="app">
   <div class="topbar">
     <span style="font-size:20px">🍽️</span>
@@ -2240,6 +2246,36 @@ if ('serviceWorker' in navigator) {
 function haptic(ms = 10) {
   try { navigator.vibrate(ms); } catch(e) {}
 }
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const splash = document.getElementById('splash');
+    if(splash){
+      splash.classList.add('hidden');
+    }
+  }, 1200);
+});
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js');
+  });
+}
+
+function haptic(ms=10){
+  if(navigator.vibrate){
+    navigator.vibrate(ms);
+  }
+}
+
+document.addEventListener('click', e=>{
+  if(
+    e.target.closest('.btn') ||
+    e.target.closest('.btni') ||
+    e.target.closest('.navbtn')
+  ){
+    haptic(8);
+  }
+});
 </script>
 </body>
 </html>
